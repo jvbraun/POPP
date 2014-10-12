@@ -1,0 +1,86 @@
+Finance::Options
+
+Description
+
+  A Perl module for options pricing and related calculations.
+  Version 0.03 -- alpha version.
+
+Copyright
+
+  Copyright (c) 1999 Jerome V. Braun. All rights reserved.
+
+  This program is free software; you can redistribute it and/or
+  modify it under the same terms as Perl itself.
+
+Prerequisites
+
+  Perl.
+
+Installation
+
+  perl Makefile.PL
+  make
+  make test
+  make install
+
+Recent Changes
+  
+  From 0.02 to 0.03
+    Fixed error in &TrinomialTree.
+    Added tests for &TrinomialTree and &JumpDiffusion.
+
+  From 0.01 to 0.02
+    Added Newton-Raphson calculation of implied volatility.
+
+Future Enhancements
+
+  1.  Sample scripts.
+  2.  Better documentation.
+  3.  More extensive test scripts, broken out by broad subject
+      headings Vanilla, Exotic, Numerical, Interest, Volatility,
+      and Utility.
+  4.  More pricing routines.
+
+Areas Needing Input
+
+  1.  How to organize the routines and subroutines.  Should they
+      be in one big module (as is) or split into several related
+      modules (as originally envisioned)?
+
+      Originally envisioned as:
+        Finance::Options::Vanilla
+        Finance::Options::Exotic
+        Finance::Options::Numerical
+        Finance::Options::Interest
+        Finance::Options::Volatility
+      additionally:
+        Finance::Options::Utility  (a set of common utility functions)
+
+      If the latter, then how to arrange the modules, their directories,
+      and Makefile.PL correctly?
+
+  2.  Use named arguments rather than simple lists?  Then the following call
+
+        $price = BlackScholes($call_put_flag, $S, $X, $T, $r, $v);
+
+      could be done thusly:
+
+        $price = BlackScholes(CALL_PUT   => $call_put_flag,
+                              UNDERLYING => $S,
+                              STRIKE     => $X,
+                              TIME       => $T,
+                              INTEREST   => $r,
+                              VOLATILITY => $v,
+                             )
+
+      From inertia I am inclined to let things stand.  Also, there is
+      a lot more typing involved using named arguments.  What do you think?
+
+  3.  A better way to code the test scripts.
+
+$Id: README,v 1.4 2000/11/25 12:48:30 jvbraun Exp $
+
+
+
+
+

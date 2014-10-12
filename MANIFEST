@@ -1,0 +1,6 @@
+MANIFEST
+Makefile.PL
+Changes
+README
+Options.pm
+t/Options.t

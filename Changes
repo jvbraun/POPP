@@ -1,0 +1,9 @@
+Revision history for Perl extension Finance::Options.
+
+0.01  Thu May 27 13:28:49 1999
+	- original version; created by h2xs 1.18
+
+0.02  Sat Jul 17 12:29:00 1999
+        - added Newton-Raphson algorithm for Implied Volatility
+
+$Id: Changes,v 1.2 1999/07/17 19:49:38 Jerome Braun Exp $
